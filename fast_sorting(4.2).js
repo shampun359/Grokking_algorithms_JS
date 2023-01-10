@@ -10,10 +10,10 @@ function quickSort (arr) {
     return [...quickSort(less), mid, ...quickSort(greater)] // Объеденяем. Что бы передать все элементы за раз используется оператор spread(...)
 }
   
-console.log(quickSort(array))
+//console.log(quickSort(array))
 
 
-// Без применения стандартных функции JS, с применением рекурсии
+// Без применения стандартных функции JS, с применением цикла
 function quicksort_rec(array) {
 	if (array.length < 2) return array;
 
