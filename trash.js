@@ -1,12 +1,19 @@
-let x = true ;
+let light = 'yellow';
 
-if(x == true){
-  let y = 'true' ;
-  console.log(y) 
-}else{
-  let y = 'fasle' ;
-  console.log(y) 
+function use (light) {
+  switch(light){
+    case 'yellow':
+      return 'red'
+    case 'red':
+      return 'green'
+    case 'green':
+      return 'yellow'
+  }
 }
+console.log(use(light))
+
+
+
 
 
 
