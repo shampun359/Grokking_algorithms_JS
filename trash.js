@@ -1,19 +1,27 @@
-let data = [[60, 10],[40, 15],[70, 1],[43,5]];
+console.time('test-Рекурсия');
 
-
-function openOrSenior(data){
-  let x_lenght = data.length;
-  let arr = [];
-  for (i=0; i<x_lenght ; i++){
-    let y = data.shift();
-    if(y[0] >= 55 & y[1] >= 7 ){
-      arr.push("Senior")
-    }else{
-      arr.push("Open")
-    }
+function fact(x){
+  if (x == 1){
+      return 1
+  }else{
+      return x + fact(x-1)
   }
-  return arr
+  
 }
+console.log(fact(5000))
 
+console.timeEnd('test-Рекурсия');
 
-console.log(openOrSenior(data))
+console.time('test');
+
+var summation = function (num) {
+  let result = 0;
+   for (var i = 1; i <= num; i++) {
+     result += i;
+   }
+  return result;
+}
+ 
+console.log(summation(5000))
+
+console.timeEnd('test');
