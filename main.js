@@ -1,21 +1,15 @@
-function Calculator() {
+const cube = document.querySelector('.cube');
+let x = 0;
+let y = 0;
 
-  this.read = function() {
-    this.a = +prompt('a?', 0);
-    this.b = +prompt('b?', 0);
-  };
-
-  this.sum = function() {
-    return this.a + this.b;
-  };
-
-  this.mul = function() {
-    return this.a * this.b;
-  };
+function rotateCube() {
+  cube.style.transform = `rotateX(${x}deg) rotateY(${y}deg)`;
+  requestAnimationFrame(rotateCube);
 }
 
-let calculator = new Calculator();
-calculator.read();
+document.addEventListener('mousemove', event => {
+  x = -(event.pageY - window.innerHeight / 2) / 10;
+  y = (event.pageX - window.innerWidth / 2) / 10;
+});
 
-alert( "Sum=" + calculator.sum() );
-alert( "Mul=" + calculator.mul() );
+rotateCube();
